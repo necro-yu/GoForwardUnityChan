@@ -43,8 +43,10 @@ public class CubeController : MonoBehaviour
     /// <param name="collision">対面</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // プレイヤー以外にぶつかった時に音を鳴らす。
         if(collision.gameObject.tag != "Player")
         {
+            // 落ちてくるので最初にぶつかった1回だけ鳴らす
             audiosource.PlayOneShot(se);
         }
     }
